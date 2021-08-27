@@ -1,6 +1,8 @@
-# JU Query
+# JU Query 
 
-## Developer instructions
+>**Note**: current version of this site has limited functionalities, new features are yet to come which are under development
+
+## Project Developement instructions
 <details>
 	<summary>npm set up</summary>
 
