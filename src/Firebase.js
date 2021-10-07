@@ -1,3 +1,4 @@
+// Importing "firebase" object from firebase npm package
 import firebase from 'firebase';
 
 // Configuration for project
@@ -12,10 +13,12 @@ const firebaseConfig = {
     measurementId: "G-JXHW20YRKV"
 };
 
+
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
 const provider = new firebase.auth.GoogleAuthProvider();
+const facebookProvider = new firebase.auth.FacebookAuthProvider();
 const db = firebaseApp.firestore();
 
-export { auth, provider };
+export { auth, provider, facebookProvider };
 export default db;

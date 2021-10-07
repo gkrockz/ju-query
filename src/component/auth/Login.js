@@ -1,7 +1,7 @@
 import React from 'react'
 import './Login.css';
 import { useState } from 'react';
-import {auth, provider} from '../../Firebase';
+import {auth, provider, facebookProvider} from '../../Firebase';
 
 const Login = () => {
 
@@ -25,6 +25,9 @@ const Login = () => {
     }
     const signIn = () => {
         auth.signInWithPopup(provider).catch((e)=>alert(e.message));
+    }
+    const signInUsingFacebook=()=>{
+        auth.signInWithPopup(facebookProvider).catch((e)=>alert(e.message));
     }
     return (
         <div className="login">
@@ -55,7 +58,7 @@ const Login = () => {
                                 src="https://1000logos.net/wp-content/uploads/2016/11/Facebook-logo-500x350.png"
                                 alt=""
                                 />
-                            <p>Continue With Facebook</p>
+                            <p onClick={signInUsingFacebook}>Continue With Facebook</p>
                         </div>
                         <div className="login__authDesc">
                             <p>
