@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import './App.css';
-import Login from './component/auth/Login';
+import Login from './components/auth/Login';
 import { useDispatch, useSelector } from 'react-redux';
-import JuQuery from './component/JuQuery';
+import Home from './components/post/Home';
 import { login, logout, selectUser } from './features/userSlice';
 import { auth } from './Firebase';
 
@@ -14,8 +14,7 @@ function App() {
  // Specifying something to react, like component needs to do something after rendering.
   useEffect(() => {
     auth.onAuthStateChanged((authUser) => {
-        if(authUser)
-        {
+        if(authUser) {
           dispatch(login({
             uid:authUser.uid,
             photo:authUser.photoURL,
@@ -35,7 +34,7 @@ function App() {
   return (
     <div className="App">
       {
-        user ? (<JuQuery / >) : (<Login />)
+        user ? (<Home />) : (<Login />)
       } 
     </div>
   );
