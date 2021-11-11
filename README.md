@@ -1,11 +1,10 @@
 # JU Query 
 
->**Note**: current version of this site has limited functionalities, new features are yet to come which are under development
+> **About**: Ju Query is an platform for university students and faculties to provide complete information about campus life from a student point of view, and academic information from university point of view.
 
-## Project Developement instructions
 <details>
-	<summary>npm set up</summary>
-
+	<summary><b>Project Developement instructions</b></summary>
+	
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 
 ## Available Scripts
@@ -50,5 +49,9 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
-
+	
 </details>
+
+---
+
+>**Note**: The current version of this website has limited functionality; new features are yet to be developed, which be deployed eventually.
