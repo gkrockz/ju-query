@@ -54,4 +54,4 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 ---
 
->**Note**: The current version of this website has limited functionality; new features are yet to be developed, which be deployed eventually.
+>**Note**: The current version of this website has limited functionality; new features are yet to be developed, which will be deployed eventually.
