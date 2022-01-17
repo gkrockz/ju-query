@@ -10,14 +10,18 @@ import { selectUser } from '../../features/userSlice';
 import Modal from 'react-modal';
 import firebase from 'firebase';
 
+// useSelector() - allows you to extract data from the Redux store 
+// state, using a selector function.
+
+
 Modal.setAppElement("#root");
 
 const Navbar = () => {
 
 const user = useSelector(selectUser);
 const [openModal,setopenModal] = useState(false); 
-const [selectOption,setSelectOption]=useState();
-const [input,setInput]  = useState("");
+const [selectOption,setSelectOption] = useState();
+const [input,setInput] = useState("");
 const[inputUrl,setInputUrl] = useState("");
 
 const handleChange=(e) => {
@@ -40,7 +44,7 @@ const handleQuestion = () => {
 
     return (
         <div className="navbar">
-            <a href="https://set.jainuniversity.ac.in">
+            <a href="https://set.jainuniversity.ac.in" target="_blank" rel="noreferrer">
             <div className="header_logo">
                 <img src={jgi_logo} alt="JU" />
             </div>

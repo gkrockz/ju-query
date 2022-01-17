@@ -3,7 +3,9 @@
     flex-direction: column;
     cursor: pointer;
   }
-  
+  a {
+    text-decoration: none;
+  }
   .widget__content {
     margin: 5px;
     display: flex;
