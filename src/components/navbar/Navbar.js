@@ -2,104 +2,125 @@ import React, { useState } from 'react';
 import HomeIcon from '@material-ui/icons/Home';
 import './Navbar.css';
 import jgi_logo from '../../assets/jgi_logo.jpg';
-import {AssignmentTurnedInOutlined,FeaturedPlayListOutlined,LanguageOutlined, LinkOutlined, NotificationsOutlined, PeopleAltOutlined, SearchOutlined } from '@material-ui/icons';
-import { Avatar, Button,Input} from '@material-ui/core';
+import { AssignmentTurnedInOutlined, FeaturedPlayListOutlined, LanguageOutlined, NotificationsOutlined, PeopleAltOutlined, SearchOutlined, ExpandMore } from '@material-ui/icons';
+import { Avatar, Button, Input } from '@material-ui/core';
 import { useSelector } from 'react-redux';
 import db, { auth } from '../../Firebase';
 import { selectUser } from '../../features/userSlice';
-import Modal from 'react-modal';
+import { Modal } from "react-responsive-modal";
+import "react-responsive-modal/styles.css";
+import { Link, withRouter } from 'react-router-dom';
 import firebase from 'firebase';
+import CloseIcon from "@material-ui/icons/Close";
+import Tooltip from "@material-ui/core/Tooltip";
 
 // useSelector() - allows you to extract data from the Redux store 
 // state, using a selector function.
 
 
-Modal.setAppElement("#root");
+const Navbar = ({ history, match }) => {
 
-const Navbar = () => {
+    const user = useSelector(selectUser);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [selectOption, setSelectOption] = useState();
+    const [input, setInput] = useState("");
+    const [inputUrl, setInputUrl] = useState("");
+    const Close = <CloseIcon />;
 
-const user = useSelector(selectUser);
-const [openModal,setopenModal] = useState(false); 
-const [selectOption,setSelectOption] = useState();
-const [input,setInput] = useState("");
-const[inputUrl,setInputUrl] = useState("");
+    const handleChange = (e) => {
+        setSelectOption(e.target.value);
+    }
 
-const handleChange=(e) => {
-    setSelectOption(e.target.value);
-}
-
-const handleQuestion = () => {
-    setopenModal(false);
-    db.collection('questions').add({
-        section:selectOption,
-        question:input,
-        imageUrl:inputUrl,
-        timestamp:firebase.firestore.FieldValue.serverTimestamp(),
-        user: user,
-    });
-    setInput("");
-    setInputUrl("");
-    setSelectOption("");
-}
-
+    const handleQuestion = (e) => {
+        e.preventDefault();
+        setIsModalOpen(false);
+        db.collection('questions').add({
+            section: selectOption,
+            question: input,
+            imageUrl: inputUrl,
+            timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+            user: user,
+        });
+        setInput("");
+        setInputUrl("");
+        setSelectOption("");
+    }
+    const navStyle = {
+        listStyle: 'none',
+        textDecoration: 'none',
+    };
     return (
         <div className="navbar">
+            <div className="qHeader-content">
             <a href="https://set.jainuniversity.ac.in" target="_blank" rel="noreferrer">
-            <div className="header_logo">
-                <img src={jgi_logo} alt="JU" />
-            </div>
+                <div className="header_logo">
+                    <img src={jgi_logo} alt="JU" />
+                </div>
             </a>
             <div className="icons_wrapper">
-                <div className="icon" title="Home">
-                    <HomeIcon />
-                </div>
-                <div className="icon">
-                    <FeaturedPlayListOutlined />
-                </div>
-                <div className="icon">
-                    <AssignmentTurnedInOutlined />
-                </div>
-                <div className="icon">
-                    <PeopleAltOutlined />
-                </div>
-                <div className="icon" title="Notifications">
-                    <NotificationsOutlined />
-                </div>
+                <Link to="/" style={navStyle}>
+                    <div className="icon" title="Home">
+                        <HomeIcon />
+                    </div>
+                </Link>
+                <Link to="/following" style={navStyle}>
+                    <div className="icon" title='Following'>
+                        <FeaturedPlayListOutlined />
+                    </div>
+                </Link>
+                <Link to="/question" style={navStyle}>
+                    <div className="icon" title='Questions'>
+                        <AssignmentTurnedInOutlined />
+                    </div>
+                </Link>
+                <Link to="/users" style={navStyle}>
+                    <div className="icon" title='Users'>
+                        <PeopleAltOutlined />
+                    </div>
+                </Link>
+                <Link to="/notification" style={navStyle}>
+                    <div className="icon" title="Notifications">
+                        <NotificationsOutlined />
+                    </div>
+                </Link>
             </div>
             <div className="search">
                 <SearchOutlined />
-                <input type="text" placeholder="Search" />
+                <input type="text" placeholder="Search Question" />
             </div>
             <div className="others">
-                <div className="avatar" title="Log Out">
-                    <Avatar src={user.photo} onClick={() => auth.signOut()}/>
-                </div>
-                <LanguageOutlined />
-                <Button onClick={()=> setopenModal(true)}>Ask Question</Button>
-                <Modal isOpen = {openModal}
-                   onRequestClose = {() => setopenModal(false)}
-                   shouldCloseOnOverlayClick={false}
-                   style = {{
-                            overlay: {
-                            width:700,
-                            height:600,
-                            backgroundColor:"rgba(0,0,0,0.8)",
-                            zIndex:"1000",
-                            top:"50%",
-                            left:"50%",
-                            marginTop:"-300px",
-                            marginLeft:"-350px",
-                      },
-                    }}>
+                <span className="avatar" title="Log Out">
+                    <Avatar className="avatar" src={user.photo} onClick={() => auth.signOut()} />
+                </span>
+                <Tooltip title="English (EN)">
+                        <LanguageOutlined />
+                </Tooltip>
+                <Button onClick={() => setIsModalOpen(true)}>Add Question</Button>
+                <Modal
+                    open={isModalOpen}
+                    closeIcon={Close}
+                    onClose={() => setIsModalOpen(false)}
+                    closeOnEsc
+                    center
+                    closeOnOverlayClick={false}
+                    styles={{
+                        overlay: {
+                            height: "auto",
+                        },
+                    }}
+                >
                     <div className="modal__title">
                         <h5>Add Question</h5>
-                        <h5>Choose Section</h5>
                         <h5>Share Link</h5>
                     </div>
-                        <div className="modal__info">
-                            <Avatar className="avatar" src={user.photo} />
-                            <p>{user.displayName ? user.displayName : user.email} </p>
-                            <div className='modal__select'>
+                    <div className="modal__info">
+                        <Avatar className="avatar" src={user.photo} />
+                        <div className="modal__scope">
+                            <PeopleAltOutlined />
+                            <p>Public</p>
+                            <ExpandMore />
+                        </div>
+                        <div className='modal__select'>
                             <select name="Choose Section" id="" onChange={handleChange} required>
                                 <option value="">Select Section</option>
                                 <option value="Technology">Technology</option>
@@ -112,23 +133,49 @@ const handleQuestion = () => {
                                 <option value="Canteen">Canteen</option>
                                 <option value="Others">Others</option>
                             </select>
-                        </div> 
                         </div>
-                        <div className="modal__field">
-                            <Input type="text" required value={input} onChange={(e)=>setInput(e.target.value)} placeholder = "Enter your question here" />
-                        <div className="modal__fieldLink">
-                            <LinkOutlined />
-                            <Input value={inputUrl} onChange={(e)=>setInputUrl(e.target.value)} type="text" className='modal__link' placeholder = "Optional:Include a link that gives context to the question" />
+                    </div>
+                    <div className="modal__field">
+                        <Input type="text" required value={input} onChange={(e) => setInput(e.target.value)} placeholder="Enter your question here" />
+                        <div
+                            style={{
+                                display: "flex",
+                                flexDirection: "column",
+                            }}
+                        >
+                            <input
+                                type="text"
+                                value={inputUrl}
+                                onChange={(e) => setInputUrl(e.target.value)}
+                                style={{
+                                    margin: "10px 0",
+                                    border: "1px solid lightgray",
+                                    padding: "10px",
+                                    outline: "1.5px solid #000",
+                                }}
+                                placeholder="🔗 Optional: Inclue a link that gives context"
+                            />
+                            {inputUrl !== "" && (
+                                <img
+                                    style={{
+                                        height: "40vh",
+                                        objectFit: "contain",
+                                    }}
+                                    src={inputUrl}
+                                    alt="displayimage"
+                                />
+                            )}
+                        </div>
                         </div>
                         <div className="modal__buttons">
-                            <button className="cancel" onClick={() => setopenModal(false)}>Cancel</button>
+                            <button className="cancel" onClick={() => setIsModalOpen(false)}>Cancel</button>
                             <button onClick={handleQuestion} type="submit" className="add">Post Question</button>
                         </div>
-                        </div>
-                    </Modal>
+                </Modal>
+            </div>
             </div>
         </div>
     )
 }
 
-export default Navbar
+export default withRouter(Navbar);

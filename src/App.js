@@ -2,9 +2,15 @@ import React, { useEffect } from 'react';
 import './App.css';
 import Login from './components/auth/Login';
 import { useDispatch, useSelector } from 'react-redux';
-import Home from './components/post/Home';
+import { Switch, Route } from 'react-router-dom';
+// import Home from './components/post/Home';
 import { login, logout, selectUser } from './features/userSlice';
 import { auth } from './Firebase';
+import HomePage from './pages/homepage/HomePage';
+import Following from './pages/followingpage/FollowingPage';
+import Questions from './pages/questionspage/QuestionsPage';
+import Users from './pages/userspage/UsersPage';
+import Notification from './pages/notificationpage/NotificationPage';
 
 function App() {
 
@@ -28,15 +34,29 @@ function App() {
         });
     },[dispatch]);
 
-
   // Conditional Rendering based on User's Authentication
   
   return (
     <div className="App">
       {
-        user ? (<Home />) : (<Login />)
-      } 
-    </div>
+        user ? (
+          <div>
+            <Switch>
+              <Route exact={true} path='/' component={HomePage} />
+              <Route exact path='/following' component={Following} />
+              <Route exact path='/question' component={Questions} />
+              <Route exact path='/users' component={Users} />
+              <Route exact path='/notification' component={Notification} />
+            </Switch>
+          </div>
+        ) 
+        : 
+        (
+          <Login />
+        )
+    }
+    
+   </div>
   );
 }
 

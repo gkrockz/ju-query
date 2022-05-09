@@ -3,7 +3,6 @@ import db from '../../Firebase';
 import QueryBox from '../querybox/QueryBox';
 import Post from './Post';
 import './Feed.css';
-import Widget from '../widgets/Widget';
 
 function Feed() {
 
@@ -86,7 +85,6 @@ function Feed() {
                     ))
                 }
             </div>
-            <Widget />
         </React.Fragment>
     )
 }

@@ -1,34 +1,38 @@
 import React from 'react'
 import './Login.css';
 import { useState } from 'react';
-import {auth, googleProvider, facebookProvider} from '../../Firebase';
+import { auth, googleProvider, facebookProvider } from '../../Firebase';
 
 const Login = () => {
 
-    const[email,setEmail]=useState("");
-    const[password,setPassword]=useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
     const handleLogin = (e) => {
         e.preventDefault()
-        auth.signInWithEmailAndPassword(email,password)
-        .then((auth)=>{
-        }).catch((e)=>alert(e.message))
+        auth.signInWithEmailAndPassword(email, password)
+            .then((auth) => {
+            }).catch((e) => alert(e.message))
     }
+
     const handleRegister = (e) => {
         e.preventDefault()
-        auth.createUserWithEmailAndPassword(email,password)
-        .then((auth)=>{
-            if(auth){
-            }
-        }).catch((e)=>alert(e.message));
+        auth.createUserWithEmailAndPassword(email, password)
+            .then((auth) => {
+                if (auth) {
+                }
+            }).catch((e) => alert(e.message));
         setEmail("");
         setPassword("");
     }
+
     const signInUsingGoogle = () => {
-        auth.signInWithPopup(googleProvider).catch((e)=>alert(e.message));
+        auth.signInWithPopup(googleProvider).catch((e) => alert(e.message));
     }
-    const signInUsingFacebook=()=>{
-        auth.signInWithPopup(facebookProvider).catch((e)=>alert(e.message));
+    const signInUsingFacebook = () => {
+        auth.signInWithPopup(facebookProvider).catch((e) => alert(e.message));
     }
+
     return (
         <div className="login">
             <div className="login__container">
@@ -49,15 +53,15 @@ const Login = () => {
                                 className="login__googleAuth"
                                 src="https://media-public.canva.com/MADnBiAubGA/3/screen.svg"
                                 alt=""
-                                />
+                            />
                             <p onClick={signInUsingGoogle}>Continue With Google</p>
                         </div>
                         <div className="login__authOption">
-                        <img
+                            <img
                                 className="login__googleAuth"
                                 src="https://1000logos.net/wp-content/uploads/2016/11/Facebook-logo-500x350.png"
                                 alt=""
-                                />
+                            />
                             <p onClick={signInUsingFacebook}>Continue With Facebook</p>
                         </div>
                         <div className="login__authDesc">
@@ -66,9 +70,9 @@ const Login = () => {
                                     Sign Up With Email
                                 </span>
                                 <br />
-                                By continuing you indicate that you have read and agree to JU Query's{" "}   
+                                By continuing you indicate that you have read and agree to JU Query's{" "}
                                 <span style={{ color: "blue", cursor: "pointer" }}>
-                                     Code of Conduct{" "}
+                                    Code of Conduct{" "}
                                 </span>
                             </p>
                         </div>
@@ -78,18 +82,18 @@ const Login = () => {
                             <h4>Login</h4>
                         </div>
                         <div className="login__inputFields">
-                            <div  className="login__inputField">
+                            <div className="login__inputField">
                                 <input
                                     value={email}
-                                    onChange={(e)=>setEmail(e.target.value)}
+                                    onChange={(e) => setEmail(e.target.value)}
                                     type="text"
                                     placeholder="Email"
                                 />
                             </div>
-                            <div  className="login__inputField">
+                            <div className="login__inputField">
                                 <input
                                     value={password}
-                                    onChange={(e)=>setPassword(e.target.value)}
+                                    onChange={(e) => setPassword(e.target.value)}
                                     type="password"
                                     placeholder="Password"
                                 />

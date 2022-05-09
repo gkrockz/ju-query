@@ -4,23 +4,24 @@ import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import db from '../../Firebase';
 import firebase from 'firebase';
-import { Link } from '@material-ui/icons';
 import { selectUser } from '../../features/userSlice';
-import Modal from 'react-modal';
-
-Modal.setAppElement("#root");
+import { Modal } from "react-responsive-modal";
+import "react-responsive-modal/styles.css";
+import CloseIcon from "@material-ui/icons/Close";
+import { PeopleAltOutlined, ExpandMore } from '@material-ui/icons';
 
 const QueryBox = () => {
     const user = useSelector(selectUser);
-    const [openModal, setOpenModal] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectOption, setSelectOption] = useState();
     const [input, setInput] = useState("");
     const [inputUrl, setInputUrl] = useState("");
+    const Close = <CloseIcon />;
     const handleChange = (e) => {
         setSelectOption(e.target.value);
     }
     const handleQuestion = () => {
-        setOpenModal(false);
+        setIsModalOpen(false);
         db.collection('questions').add({
             section: selectOption,
             question: input,
@@ -39,34 +40,36 @@ const QueryBox = () => {
                 <Avatar src={user.photo} />
                 <h5>{user.displayName}</h5>
             </div>
-            <div className="box" onClick={() => setOpenModal(true)}>
+            <div className="box" onClick={() => setIsModalOpen(true)}>
                 <p>Post your question here : )</p>
             </div>
-            <Modal isOpen={openModal}
-                onRequestClose={() => setOpenModal(false)}
-                shouldCloseOnOverlayClick={false}
-                style={{
-                    overlay: {
-                        width: 700,
-                        height: 600,
-                        backgroundColor: "rgba(0,0,0,0.8)",
-                        zIndex: "1000",
-                        top: "50%",
-                        left: "50%",
-                        marginTop: "-300px",
-                        marginLeft: "-350px"
-                    }
-                }}>
+          <Modal
+            open={isModalOpen}
+            closeIcon={Close}
+            onClose={() => setIsModalOpen(false)}
+            closeOnEsc
+            center
+            closeOnOverlayClick={false}
+            styles={{
+              overlay: {
+                height: "auto",
+              },
+            }}
+          >
                 <div className='modal__title'>
                     <h5>Add Question</h5>
-                    <h5>Choose Section</h5>
                     <h5>Share Link</h5>
                 </div>
                 <div className='modal__info'>
                     <Avatar
                         className='avatar'
                         src={user.photo} />
-                    <p>{user.displayName ? user.displayName : user.email}</p>
+                    <div className="modal__info">
+                        <div className="modal__scope">
+                            <PeopleAltOutlined />
+                            <p>Public</p>
+                            <ExpandMore />
+                        </div>
                     <div className='modal__select'>
                         <select name="Choose Section" onChange={handleChange} required>
                             <option value="">Select section</option>
@@ -82,29 +85,43 @@ const QueryBox = () => {
                         </select>
                     </div>
                 </div>
-
-                <div className='modal__field'>
-                    <Input
-                        value={input}
-                        required
-                        onChange={(e) => setInput(e.target.value)}
-                        type='text'
-                        placeholder="Select an appropriate option and post a question" />
-
-                    <div className='modal__fieldLink'>
-                        <Link />
-                        <Input
-                            value={inputUrl}
-                            onChange={(e) => setInputUrl(e.target.value)}
-                            className='modal__link'
-                            type='text'
-                            placeholder="Optional: Include a link that gives context to the question" />
-                    </div>
+                </div>
+                <div className="modal__field">
+                        <Input type="text" required value={input} onChange={(e) => setInput(e.target.value)} placeholder="Enter your question here" />
+                        <div
+                            style={{
+                                display: "flex",
+                                flexDirection: "column",
+                            }}
+                        >
+                            <input
+                                type="text"
+                                value={inputUrl}
+                                onChange={(e) => setInputUrl(e.target.value)}
+                                style={{
+                                    margin: "10 px 0",
+                                    border: "1px solid lightgray",
+                                    padding: "10px",
+                                    outline: "1.5px solid #000",
+                                }}
+                                placeholder="🔗 Optional: Inclue a link that gives context"
+                            />
+                            {inputUrl !== "" && (
+                                <img
+                                    style={{
+                                        height: "40vh",
+                                        objectFit: "contain",
+                                    }}
+                                    src={inputUrl}
+                                    alt="displayimage"
+                                />
+                            )}
+                        </div>
                     <div className='modal__buttons'>
                         <button
                             className='cancel'
-                            onClick={() => setOpenModal(false)}>
-                            Close
+                            onClick={() => setIsModalOpen(false)}>
+                            Cancel
                         </button>
                         <button onClick={handleQuestion} type='submit' className='add'>
                             Add Question

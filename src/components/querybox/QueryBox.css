@@ -8,7 +8,6 @@
     border-radius: 2px;
     cursor:pointer;
 }
-
 .wrapper:hover {
     border:1px solid lightgray;
 }
@@ -25,13 +24,11 @@
     font-weight: 300;
     margin-left:10px;
 }
-
 .box
 {
     display: flex;
     margin-top: 8px;
 }
-
 .box > p
 {
     font-weight: bold;
@@ -61,6 +58,11 @@
     display: flex;
     align-items: center;
     margin-top: 30px;
+    flex-wrap: wrap;
+    align-content: space-between;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+
 }
 
 .modal__info>p {
@@ -70,12 +72,14 @@
 }
 
 .modal__info>.modal__select>select {
+    display: flex;
+    align-items: center;
     color: rgb(98, 98, 98);
     padding: 5px;
     margin-left: 10px;
-    cursor: pointer;
     background-color: rgb(230, 230, 230);
     border-radius: 33px;
+    cursor: pointer;
 }
 
 .modal__field {
@@ -100,22 +104,22 @@
 }
 
 .modal__buttons {
-    display: flex;
-    align-items: center;
-    margin-top: 260px;
-    margin-right: -20px;
-    border-top: 1px solid lightgray;
+         display: flex;
+        flex-direction: column-reverse;
+        margin-top: 10px;
+        align-items: center;
 }
-
+.modal__button>.cancel:hover {
+    background-color: #dfdfdf;
+    color: black;
+}
 .modal__buttons>.cancel {
-    margin-left: auto;
+    margin-top: 10px;   
     border: none;
-    margin-top: 5px;
     outline: none;
     color: gray;
     font-weight: 500;
     padding: 10px;
-    margin-right: 10px;
     border-radius: 33px;
     cursor: pointer;
 }
@@ -123,12 +127,21 @@
 .modal__buttons>.add {
     border: none;
     outline: none;
-    margin-top: 5px;
-    background-color:#1b6be4;
+    margin-top: 10px;
+    background-color: #1b6be4;
     color: white;
     font-weight: 700;
-    padding: 10px;
-    margin-right: 10px;
+    padding: 10px px;
     border-radius: 33px;
+    width: 200px;
     cursor: pointer;
+   
 }
+.react-responsive-modal-overlay {
+    background: rgb(0 0 0 / 75%);
+  }
+
+  .react-responsive-modal-modal {
+    width: 90vw;
+    height: 90vh !important;
+  }
