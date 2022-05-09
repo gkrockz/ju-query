@@ -2,6 +2,13 @@
 
 > **About**: Ju Query is an platform for university students and faculties to provide complete information about campus life from a student point of view, and academic information from university point of view.
 
+---
+> **What's new in the latest release 🐞 ➡️ 🆕:** 
+>  <p>1. Unlocked new sections in navbar such as (Following, My Questions, Users, Notifications) </p>
+>  <p>2. Dynamic Image preview while pasting Image URL for each question</p>
+>  <p>3. Updated UI Components and Stylesheets</p>
+---  
+
 <details>
 	<summary><b>Project Developement instructions</b></summary>
 	
