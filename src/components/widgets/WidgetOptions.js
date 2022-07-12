@@ -27,8 +27,29 @@ function WidgetOptions()
                 </div>
             </div>
             </a>
+            <a href="https://set.jainuniversity.ac.in/placements/FET-placement-results.php" target="_blank" rel="noreferrer">
+            <div className="widget__content">
+                <img
+                    src="https://arkajainuniversity.ac.in/wp-content/uploads/2018/08/Logo.jpg"
+                    alt="Software" />
+                <div className="widget__contentTitle">
+                    <h5>Jain University Placements</h5>
+                    <p>JU Placement results</p>
+                </div>
+            </div>
+            </a>
+            <a href="https://share.streamlit.io/vishnushigi/chatbot/main/chatbot.py" target="_blank" rel="noreferrer">
+            <div className="widget__content">
+                <img
+                    src="https://i.pinimg.com/originals/0c/67/5a/0c675a8e1061478d2b7b21b330093444.gif"
+                    alt="Software" />
+                <div className="widget__contentTitle">
+                    <h5>JU ChatBot</h5>
+                    <p>AI Assited chatbot for jain university</p>
+                </div>
+            </div>
+            </a>
         </div>
     );
 }
-
 export default WidgetOptions

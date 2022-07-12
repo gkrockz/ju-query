@@ -2,6 +2,7 @@ import { Avatar } from '@material-ui/core';
 import { ArrowDownwardOutlined, ArrowUpwardOutlined, ChatBubbleOutline, MoreHorizOutlined, RepeatOutlined, ShareOutlined } from '@material-ui/icons';
 import React, { useEffect, useState } from 'react';
 import './Post.css';
+import ShareButton from 'react-web-share-button';
 import "react-responsive-modal/styles.css";
 import { useDispatch, useSelector } from 'react-redux';
 import { selectQuestionId, setQuestionInfo } from '../../features/questionSlice';
@@ -87,7 +88,7 @@ const Post = ({ Id, imageUrl, section, question, timestamp, JuUser }) => {
                             </p>
                         </div>
                         <div className='modal__answer'>
-                            <ReactQuill
+                            <ReactQuill 
                                 value={answer} placeholder='Enter Your Answer'
                                 onChange={handleQuill}
                             />
@@ -141,7 +142,7 @@ const Post = ({ Id, imageUrl, section, question, timestamp, JuUser }) => {
                     <ChatBubbleOutline />
                 </div>
                 <div className="footer_left">
-                    <ShareOutlined />
+                    <ShareButton title="Ju Query Feed" text="JU Query" url="https://ju-query-beta.web.app/" />
                     <MoreHorizOutlined />
                 </div>
             </div>

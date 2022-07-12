@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site":"ju-query-beta",
     "public": "build",
     "ignore": [
       "firebase.json",
