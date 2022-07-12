@@ -1,0 +1,442 @@
+{
+    "intent":[
+        {
+            "tag":"greeting",
+            "patterns":["Hi","Hey","What's up","Hello","You there","Good day"],
+            "answer":["Hello","How can I assist you?","Hey","Hi there"]
+        },
+        {
+            "tag": "goodbye",
+            "patterns": ["See ya", "See you later", "Goodbye", "I am Leaving", "Have a Good day","Bye"],
+            "answer": ["Return if you have any queries.", "Talk to you later", "Goodbye!"]
+        },
+        {
+            "tag":"hru",
+            "patterns":["How are you","hru","You doing good?","Feeling well?"],
+            "answer":["I'm feeling amazing. Thanks for asking"]  
+        },
+        {
+            "tag": "hours",
+            "patterns": ["When are you guys open", "What are your hours", "Hours of operation","working hours?","hours"],
+            "answer": ["We are open Monday to Saturday, from 8AM till 5PM!"]
+        },
+        {
+            "tag": "contact1",
+            "patterns": ["How to contact the office"],
+            "answer": ["Website: https://www.jainuniversity.ac.in/, Email ID: enquiry.pg@jainuniversity.ac.in, Contact number: +91 80 46650100"]
+        },
+        {
+            "tag":"contact2",
+            "patterns":["What is Jain University's email","college email id","email"],
+            "answer":["Email ID: admission.set@jainuniversity.ac.in"]
+        },
+        {
+            "tag":"contact3",
+            "patterns":["What is JGI's phone number","Phone no.","P.no","college phone number","Contact number","JGI contact number","college contact number"],
+            "answer":["Contact number: +91 80 46650100"]
+        },
+        {
+            "tag":"contact4",
+            "patterns":["What is Jain University's website","Official website","Website"],
+            "answer":["Website: https://www.jainuniversity.ac.in/"]
+        },
+        {
+            "tag": "amenities",
+            "patterns": ["What are the facilities available?", "What amenties are there", "Facilities?","Amenities?","canteen","food courts"],
+            "answer": ["Canteens, Food courts, Health centre, Trasport facilities for faculties and day-scholars, Banks, ATMs, Guesthouse, Gymnasium, Swimming Pool"]
+        },
+	    {
+            "tag": "LTP",
+            "patterns": ["what is LTP","what is T component","distribution of course credits"],
+            "answer": ["At JGI, we follow CAL- Curriculum for Applied Learning System, so a course can have 4 things which contribute to credit namely, 1. Lecture Classes per week (each of 50 minutes duration) ( L) 2. Tutorial Classes per week(each of 50 minutes duration) (T) 3. Lab(Practicals) Classes per week( each of 50+50=140 minutes) ( (P) "]
+        },
+	    {
+            "tag": "total credits",
+            "patterns":["how many credits are to be done in the 4 years","total credits to be completed?","minimum credits for degree","credits","how many credits","total number of credits","how many credits are required"],
+            "answer": ["180 credits for BTech are ought to be done in 4 years for 2018, 2017 batches whereas 2019 onwards the minimun number of credits for getting the degree is 160"]
+        },
+	    {
+            "tag": "UE" ,
+            "patterns":["what are UEs","what is a university elective","UE?"],
+            "answer": ["University Electives are meant to develop interdisciplinary skills among the students. So the students can take any courses other than their University and Program core courses as their University elective courses. Student should have completed minimum of 12 credits(>2018) and 6 credits(2019 onwards) under university electives to fulfil their requirements to complete their B.Tech Degree."]
+        },	
+	    {
+            "tag": "UC" ,
+            "patterns":["what are UCs","what is a university core","UC?"],
+            "answer": ["Courses listed under University Core are mandatory to all similar degree programmes.These courses are basic in nature and are expected to enhance student’s knowledge in various disciplines apart from his/her own discipline. Student should have completed minimum of 70 credits(>2018) and 52 credits(2019 onwards) under university electives to fulfil their requirements to complete their B.Tech Degree."]
+	    },
+	    {
+            "tag": "PE" ,
+            "patterns":["what are PEs","what is a programme elective","PE?"],
+            "answer": ["By taking Programme Elective courses, students get an opportunity to study courses which are more advanced or applied or specialized than the basic courses he/she studies as part of core courses listed under their programme curriculum. These courses will generally provide an in-depth knowledge of a specific sub-field the student has taken as his/her major specialization. Student should have completed minimum of 40 credits(>2018) and 30 credits(2019 onwards) under university electives to fulfil their requirements to complete their B.Tech Degree."]
+        },
+	    {
+            "tag": "PC" ,
+            "patterns":["what are PCs","what is a programme core","PC?"],
+            "answer": ["Courses listed under Programme Core of a curriculum are mandatory to the specific programme. Students have to complete all the courses listed under PC to become eligible for the degree. No substitution of a PC course is permitted. Student should have completed minimum of 58 credits(>2018) and 72 credits(2019 onwards) under university electives to fulfil their requirements to complete their B.Tech Degree."]
+        },
+        {
+            "tag":"Holiday",
+            "patterns":["Will JGI give holidays","Holidays","Leave","Leaves","Holiday","Vacation","Vacations","When are the holidays?"],
+            "answer":["JGI's Calendar of Events will be circulated through your email id before the start of each semester"]
+        },
+        {
+            "tag":"Basic Attendance",
+            "patterns":["attendance","minimum attendance","what is the minimum attendance","how many classes should we attend"],
+            "answer":["Students are required to maintain a minimum of 80% attendance in each course"]
+        },
+        {
+            "tag":"Debar",
+            "patterns":["Debar","Debarred","What is debaration","What happens if i get debarred"],
+            "answer":["If you have less than 75% attendance for a particular subject, you will not be able to write the exams for that subject till you get more than 75%"]
+        },
+        {
+            "tag":"Debar2",
+            "patterns":["How do I get debarred","Why will i get debared"],
+            "answer":["If you dont have 75% attendance in any subject, you could get debarred. (Unless you are a 9 pointer)"]
+        },
+        {
+            "tag":"DebarLab",
+            "patterns":["Is debar for lab also","Lab debar","Is debar only for theory","Are lab debars there"],
+            "answer":["You can get debarred from lab also, if you have less than 75% attendance"]
+        },
+        {
+            "tag":"Lab1",
+            "patterns":["Do all subjects have labs","All subject lab?"],
+            "answer":["No, only subjects with credits under P have labs"]
+        },
+        {
+            "tag":"Lab2",
+            "patterns":["Are there only lab subjects or both theory and lab","Theory and lab subjects"],
+            "answer":["There are subjects with both theory and lab and some which are only lab"]
+        },
+        {
+            "tag":"Lab3",
+            "patterns":["Are only lab classes graded differently","Only lab cats","If there is only lab how are they graded","Lab only grading"],
+            "answer":["Most only lab subjects have regular PATs, and the usual CATs and FAT. Ask your respective lab faculty for more info"]
+        },
+        {
+            "tag":"Cat1",
+            "patterns":["Cats","Cat","What is continuous assesment test","What are cats","How many cats"],
+            "answer":["Every theory subject has 2 CATs is out of 50 which will be converted to 15 for grade convertion, which will take place before your FAT during the semester. CATs will be for 90 mins"]
+        },
+        {
+            "tag":"Cat2",
+            "patterns":["Are there any difference between the cats","Cat1 and Cat2 difference","cat difference"],
+            "answer":["Cat 1 happens first usually a month after the semester starts and is closed book whereas Cat 2 will take place at about 3 weeks after Cat1 and is open book"]
+        },
+        {
+            "tag":"thank you",
+            "patterns":["Thanks","Thank you"],
+            "answer":["No, Thank you"]
+        },
+        {
+            "tag":"External1",
+            "patterns":["When are Externals","How long do externals last","Time limit of externals"],
+            "answer":["Externals are the last exams of the semester which are conducted at the end of the semester. They are 3 hours long"]
+        },
+        {
+            "tag":"External2",
+            "patterns":["How are theory externals graded","Weightage of Externals","Importance of externals","Marks in externals","Theory externals","Theory externals"],
+            "answer":["Theory Fats are out of 100 marks which will be converted to 70 for grade convertions"]
+        },
+        {
+            "tag":"DA1",
+            "patterns":["DA","What are DAs","What are digital assignments"],
+            "answer":["Apart from CATs, externals and projects you will have to complete three digital assignment for all theory courses. How and what they will be depends on your faculty coordinator."]
+        },
+        {
+            "tag":"DA2",
+            "patterns":["Weightage of DA","Digital Assigment marks","DA marks","Marks in DAs","Weightage of da"],
+            "answer":["Digital Assignments are out of 10 marks"]
+        },
+        {
+            "tag":"Course Selections",
+            "patterns":["How does course selection work at the beginning of each sem semester","How do i select teachers and courses"],
+            "answer":["Before each semester you will be given a time slot and ffcs link. During that time slot you can access the link and select courses. Once you have selected your course you can choose your slot and teachers"]
+        },
+        {
+            "tag":"Course2",
+            "patterns":["Is there an easy way to decide what courses to take for the next or upcoming sem","Am i allowed to take any course","Can i take courses outside my syllabus","I dont know what courses to choose, how to decide"],
+            "answer":["You will be getting a list of preferred courses to choose from based on your branch before each semester. You can deviate from that but finding other courses of appreciable time slots could be difficult. You can only take courses offered to you for your branch other than the University Electives"]
+        }, 
+        {
+            "tag": "hostel rooms",
+            "patterns": ["How many beds", "how many room mates in hostel rooms", "Can I get a single bed?","hostel room","Can you explain about hostel rooms"],
+            "answer": ["There are two,three and four bedded accomodation"]
+        }, 
+        {
+            "tag": "Hostel food",
+            "patterns": [" Is non Veg available?", "Veg or Non veg", "North Indian food","south Indian","Mess food"],
+            "answer": ["We have only veg food in all South Indian,North Indian and special mess and selection is optional "]
+        },
+        {
+            "tag": "Hostel facilities",
+            "patterns": ["what facilities available in hostel?", "Do you have gym in hostel", "Are there facilities for fitness?","I would like to know more about hostel","How good is the  hostel facilities in VIT?"],
+            "answer": ["We have gymnasium,health centre,Indoor games ,Entertainment hall with Tv facility,Wifi facility in the hostel"]
+        },
+        {
+            "tag": "Sports",
+            "patterns": ["What are the sport activities available?", "Which sports team is there in JGI?", "Can you list the games played?","Is physical activities given priority?"],
+            "answer": ["We have college teams in cricket,Basket ball,Football,Badminton,Tennis,Swimming,Volley ball,Table tennis,Chess"]
+        },
+        {
+            "tag": "Clubs",
+            "patterns": ["What are the various clubs?", "What are the extra-curricular activities?"],
+            "answer": ["Dance,Music,Dramatics,Viteach,NSS,Robotics club,Enactus,Trekking,Photography,English liererary,Quiz,Designers,Yoga,Uddheshya,Health,Youth red cross,Womens development,Rotaract etc are few clubs"]
+        },
+        {            
+            "tag": "Placements",
+            "patterns": ["How about placements in JGI?", "How good are the placements?", "What are the companies that visit JainUniversity?","What about campus interview?","How about jobs offered?"],
+            "answer": ["The placement department is an integral part of JAIN (Deemed-to-be University) that works rigorously to connect the students with the top companies. Even global companies visit the campus for recruitment drives. Over two hundred prospective recruiters have hired more than 4,000 students from JAIN (Deemed-to-be University) over the last few years (2009-2017). For the academic year of (2016-2020), students got placed in reputed companies with packages ranging from 20 Lacs P.A upto 30 Lacs P.A. For more details kindly visit the placement page on the website."]
+        },
+        {
+            
+            "tag": "Hostel timings",
+            "patterns": ["Whats the girls hostel timings", "How about hostel timings for boys?", "Hostel curfew timings?","In-time for boys hostel","In-time for girls hostel"],
+            "answer": ["Boys and girls  have to be inside the campus by 6.00pm.Boys have to enter the hostel by 9.00 pm and girls by 7.00 p.m "]
+        },
+        {     
+            "tag": "Library",
+            "patterns": ["Can you give details about libary", "What are the library working  hours", "How can I borrow  books from library?","how many days can i keep books borrowed from library?","DO I needId card for  library"],
+            "answer": ["!Library is open from 8.00 am to 11:59 p.m   and books are issued to members on RFID Check Out KIOSK and returned by RFID DROP KIOSK"]
+         },
+        {            
+            "tag": "Bus",
+            "patterns": ["Can you give details of college bus", "what are the travel options for day scholars?", "How many bus routs are there?","Will there be bus going via porur?"],
+            "answer": ["There are bus facilities for day scholars and there are pick up points in almost all major locations in the city with about 25 bus routes"]
+        },
+        {
+            "tag": "Bus timing",
+            "patterns": ["At what  time does the college bus reach college? ", "At what time does the college bus start back from college?", "What are the bus timings during cat?","Is there bus facility in the afternoon?"],
+            "answer": ["College buses reach college at 7:55 a.m  and start back at 5 p.m.There is a bus which starts at 1.00 pm "]
+        },    
+	    {
+            "tag": "Hostel Leave application",
+            "patterns": ["How do you apply for leave", "whats the procedure to go to local guardians home?", "How to go to native?","Do I need permission to go home?","Can hostel wardens approve leave?"],
+            "answer": ["For hostel leave you need to apply to the hostel warden and get his/her approval."]
+        },
+	    {
+            "tag": "Health Centre",
+            "patterns": ["What to do if you are sick?", "Where to go when you are not feeling well?"," feeling sick what to do", "Is there medical facility in the campus","what facilities are available in health centre?"],
+            "answer": ["Health centre operates 24×7 and is near Four Sharing with Observation Beds,Consultation room, Doctor and staff nurses Housekeeping ,2 Ambulances"]
+        },
+	    {
+            "tag": "Outing for girls",
+            "patterns": ["Is outing permitted for girls?", "What is the procedure to go for outing", "How to get permission to go out of the college?"],
+            "answer": ["Girls need to submit their outcard at the entrance  gate  and collect it once  they return before 6 p.m"]
+        },
+	    {
+            "tag": "fests",
+            "patterns": ["Which are the major fests?", "Are there any college culturals?", "what are the technical fests in college?","Do vit hosts intercollege culturals?"],
+            "answer": ["There are two major fests are Vibrance-a cultural and sports fest and technoVit a technical fest"] 
+        },
+	    {
+            "tag": "Additional learning",
+            "patterns": ["How can I get marks in additional learning", "criteria for additional learning", "does publication of research paper give extra marks ","Will online courses be counted for grades?"],
+            "answer": ["ONline courses,research papers,participation in Make-a-thon and other technical activities are considered for additional learning  for maximum three courses if relevant documents are uploaded"]
+        },
+	    {
+            "tag": "Course registration",
+            "patterns": ["please explain about course registration", "How to select faculty?", "How to select courses?","Is course registration on a first come first serve basis?","Will I get the required courses?"],
+            "answer": ["There will be a mock registration where the list of courses and faculties will be displayed prior to the actual registration."]
+        },
+	    {
+            "tag": "Add/Drop courses",
+            "patterns": ["What to do if I miss registration", "I didnt get the courses I wanted", "I dont want the course I selected","I want to add more credits this semester"],
+            "answer": ["There is an option for add/Drop courses after course registration.If you want to take more or delete some courses you can do the same during that time"]
+        },
+	    {
+            "tag": "hours",
+            "patterns": ["When are you guys open", "What are your hours", "Hours of operation","working hours?","hours"],
+            "answer": ["We are open Monday to Saturday, from 9AM till 5PM."]
+        },
+        {
+            "tag":"options" ,
+            "patterns": ["How you could help me?","What you can do?","What help you provide?","What support is offered","Help","What are you for","What is your use"],
+            "answer":["I can help you get some data about PE(Program Electives), PC(Program core), UC(Universite Core) and UE(University Electives). I could give you a walkthrough about the College and about ITP."]
+        },
+        {
+           "tag":"library2",
+           "patterns":["Tell about Library","books?","Any e-books offered?","Central Library?"] ,
+           "answer":["We have a central library located at JGI Block at the 2nd Floor with a wide variety of books and e-books."]
+        },
+        {
+            "tag":"sports2",
+            "patterns":["Any outdoor activity?","playing ground?","Play field?","Track and field","cricket?","tennis?","football?","badminton","volleyball","athletics"],
+            "answer":["We have numerous outdoor playgrounds for track and field events, football, cricket, volleyball, badminton etc."]
+        },
+        {
+            "tag":"sports3",
+            "patterns":["Indoor sports","Indoor sports","indoor actvities?","carrom","chess","table tennis","tt","gym"],
+            "answer":["JGI offers indoor facilities such as Carrom, Chess, GYM and Table Tennis"]
+        },
+        {
+            "tag":"Health2",
+            "patterns":["first aid?","health issues?","where is the health centre located?","ambulance"],
+            "answer":["The Health Centre is located near the Four Sharing Blocks. It caters to any student’s medical needs 24×7. We have Observation Beds, Consultation room, Doctor and staff nurses, Housekeeping, 2 Ambulances"]
+        },
+        {
+            "tag":"backlog",
+            "patterns":["backlog?","passing criteria?","How to clear backlogs","Tell about arrear exam."],
+            "answer":["We maintain a passing criteria of 40% overall. Students should also secure 40% in each of the examinations conducted, and students are expected to maintain 75% attendance in all the subjects. Students would be debarred from writing an exam if they involve in any malpractices or do not meet the attendance criteria. Backlogs are conducted for students separately, and they can wish to re-register for the course to improve their grades."]
+        },
+        {
+            "tag":"Proctor",
+            "patterns":["mentor?","tutor?","help from teachers"],
+            "answer":["The proctor is just like an on-campus parent/mentor to whom you can approach if you have any sort of problem either it is an academic/non-academic help."]
+        },
+        {
+            "tag":"Intersem",
+            "patterns":["what is Intersem?","inter-sem?","Intersem?","any semester in between holidays?"],
+            "answer":["Inter semester is usually for clearing backlogs or maybe grade improvement. It's actually quite nice compared to regular semester."]
+        },
+        {
+            "tag":"Programme Chair",
+            "patterns":["progamme chair?","programme-chair?","what do you mean by programme chair?"],
+            "answer":["The Program Chair is responsible for curricular oversight, academic advising (including orientation of students), and the recruitment and mentorship of faculty enrolled in."]
+        },
+        {
+            "tag":"Classrooms",
+            "patterns":["how big is a class room?","classrooms?"],
+            "answer":["The classrooms are well designed to fit 60 students and incorporates everything needed for a pleasant learning atmosphere. Smart and white boards are used in the classrooms for teaching that enables the professors to switch to different modes of teaching depending on the requirement."]
+        },
+        {
+            "tag":"Auditorium",
+            "patterns":["auditorium?","Where does conferences take place?","are the auditoriums air-conditioned","capacity of the auditorium"],
+            "answer":["We have three big auditoriums which can accommodate atleast 400 students and ,it has been built with centralised air conditioners ,Wi-fi service and a spectacular stage along with perfect amount of lighting."]
+        },
+        {
+            "tag":"Faculty",
+            "patterns":["faculty info","faculty?","are the faculties qualified?"],
+            "answer":["Our faculty are highly qualified, committed, and experienced, and are committed to remaining technically current and providing a world-class education to our students."]
+        },
+        {
+            "tag":"Day Scholars",
+            "patterns":["tell me about Day scholars","Any advantage of being a day scholar?"],
+            "answer":[" Day scholars have benefit to go out and enter college any time but hostelers have their IN times."]
+        },
+        {
+            "tag":"ID cards",
+            "patterns":["id?","id card"],
+            "answer":["Our Administration ensures students to wear ID card during campus either for entering into Library, late night permission, Main gate entry, Library book issue, Examinations etc."]
+        },
+        {
+            "tag":"ID card lost",
+            "patterns":["what happens if I lose my ID card?","ID card lost?","I have lost my ID card what should I do"],
+            "answer":[" JGI will re issue your ID card but you have to pay some fine in the office and you have to re-apply for ID card."]
+        },
+        {
+            "tag":"Programmes OFFERED",
+            "patterns":["what are the programmes offered?","are there any programmes offered?","list of programmes offered"],
+            "answer":["JGI provides programmes on 9 major subjects (Allied Heatlhcare & Science, Commerce, Design, Engineering & Technology, Humanities & Social Sciences, Languages, Management, Ph.D., Sciences). Visit hhttps://www.jainuniversity.ac.in/programs to know more about it or type 'Program Programe Name' for more detail on courses available in each subjects."]
+        },
+        {
+            "tag":"course AHS",
+            "patterns":["Programm Allied Heatlhcare & Science"],
+            "answer":["There are 19 UG Programms and 9 PG programms offered by The School of Allied Heatlhcare & Science. For more info visit https://sahs.jainuniversity.ac.in/"]
+        },
+        {
+            "tag":"Course Commerce",
+            "patterns":["Program Commerce"],
+            "answer":["There are 16 B.Com courses and 3 M.Com courses offererd.  For more info visit https://www.jainuniversity.ac.in/programs/top-university-for-commerce-programs-in-bangalore"]
+        },
+        {
+            "tag":"Course Design",
+            "patterns":["Program Design"],
+            "answer":["There are 8 Bachelor's degree courses and 2 Master degreee courses offered. For more info visit https://www.jainuniversity.ac.in/programs/top-university-for-design"]
+        },
+        {
+            "tag":"Course Engineering",
+            "patterns":["Program Engineering & Technology", "Programm Engineering and Technology"],
+            "answer":["The Engineering and Technology Courses are offered by School of Civil Engineering, School of Mechanical Engineering, School of Computer Science Engineering,School of Aerospace Engineering,School of Electrical and Electronics Communication Engineering. For more info visit https://www.jainuniversity.ac.in/programs/top-indian-university-for-engineering-and-technology-in-bangalore"]
+        },
+        {
+            "tag":"Humanities & Social Sciences",
+            "patterns":["Program Humanities & Social Sciences"],
+            "answer":["There are 9 courses offered. For more info visit https://www.jainuniversity.ac.in/programs/top-universities-for-humanities-social-sciences-programs"]
+        },
+        {
+            "tag":"Course Language",
+            "patterns":["Program Language"],
+            "answer":["Master of Arts(English) is offered. To know more visit https://www.jainuniversity.ac.in/programs/top-universities-for-languages-programs"]
+        },
+        {
+            "tag":"Course Management",
+            "patterns":["Program Management"],
+            "answer":["Various courses are offered to know about the courses offered visit https://www.jainuniversity.ac.in/programs/top-universities-for-management-programs"]
+        },
+        {
+            "tag":"Course Ph.d",
+            "patterns":["Program Ph.D"],
+            "answer":["Doctor of Philosophy (Ph.D.) is offered to know more visit https://www.jainuniversity.ac.in/program/phd/doctor-of-philosophy-phd"]
+        },
+        {
+            "tag":"Courses Sciences",
+            "patterns":["Program Sciences"],
+            "answer":["Various courses are offered to know more visit https://www.jainuniversity.ac.in/programs/top-universities-for-sciences-programs"]
+        },
+        {
+            "tag":"UG eligible",
+            "patterns":["What is the eligibility criteria for doing UG at JAIN?", "Is JET exam mandatory for seeking admission here?","What is the eligibility criteria for doing UG"],
+            "answer":["The minimum qualification required to apply for UG programs is to attain pass marks in 10+2 examination in Science / Commerce / Arts from PUC / ISC / CBSE or equivalent board. A course recognized as equivalent thereto by the University. Yes, along with having the required pass marks in 10+2 a student has to clear the JET exam for seeking admission in JAIN (Deemed-to-be University)."]
+        },
+        {
+            "tag":"JET",
+            "patterns":["What is JET","JET"],
+            "answer":["JAIN Entrance Test (JET) is an entrance exam conducted by JAIN (Deemed-to-be University) for admissions to various UG and PG programs offered by the university. Admission to all programs are based on the merit and the rank obtained by the students in the entrance test. After clearing the written test the students have to face group discussion and personal interview round. To enroll for any UG or PG programs, it is mandatory for the student to appear and clear the JET exam."]
+        },
+        {
+            "tag":"Apply JET",
+            "patterns":["How do I apply for JET","JET Apply"],
+            "answer":["The application forms will be available online. The candidates can visit the JAIN university website (https://www.jainuniversity.ac.in/admission/eligibility-criteria-for-UG-admissions#!#ApplicationProcedure) and register for the JET exam. Once the registration process is complete the students will be notified further on the details of the examination. For payment of the exam fee a non-refundable application fee for the preferred program should be paid through online payment gateway mode with the valid Credit Card / Debit Card or Net Banking facility. For the offline mode Candidates can purchase a non-refundable online application coupon from the Admissions Office and redeem the same by entering the specific coupon code in the Online Payment Gateway under the heading 'Coupon Code'."]
+        },
+        {
+            "tag":"admission cancel",
+            "patterns":["What is the Admission Cancellation Process","Cancel Admission"],
+            "answer":["The application for cancellation should be submitted by the candidate in-person by presenting the Original fee paid receipt, document submission receipt and any other documents that had been received from the University. No candidate will be entitled for a refund on or after the date of commencement of classes."]
+        },
+        {
+            "tag":"Feewhere",
+            "patterns":["Where do I pay the fee","Link for the fee payment"],
+            "answer":["All the fee paid through online mode is done thorugh SBI portal. https://www.onlinesbi.com/sbicollect/icollecthome.htm (Note: Take a copy of the Proof of Payment.)"]
+        },
+        {
+            "tag":"feestruct",
+            "patterns":["What is the fee for 1st year","Fee Structure","Total Tutuion Fee","Hostel Fee"],
+            "answer":["Each course/program has different Fee Structure. The Tutuion Fee will be specified clearly in the Acknowledgement form provided to the student after being admitted to the college. The hostel fee will differ based the choice of accomadation and will be shared by the hostel incharge"]
+        },
+        {
+            "tag":"feewhen",
+            "patterns":["When should I pay the fee","Is the fee yearly or semester wise","Fee payment dates"],
+            "answer":["The Fees paid are on Yearly Basis. The fees should be paid before the start of every Even Semester. Late payment of fee will result in being penalized."]
+        },
+        {
+            "tag":"transportfee",
+            "patterns":["Fee for Bus","Transport Fee","Bus Fee"],
+            "answer":["The tansport fee is paid on yearly basis and may vary according to the bus. For detailed information contact the Transpot Incharge"]
+        },
+        {
+           "tag":"Anti- Ragging",
+           "patterns":["no ragging?","ragging free campus?","Prohibition of Ragging"],
+           "answer":["a) Ragging within the University campus including its institutions, departments, and hostels is strictly prohibited.b) Ragging in any form in the private buildings where University students stay is also prohibited.c) No person including students / staff / faculty shall participate or abet or propagate ragging in any form."] 
+        },
+        {
+            "tag":"feedback",
+            "patterns":["Do students need to give feedbacks?","academics-feedback?"],
+            "answer":["Feedback on the course from the students and faculty members is obtained at the end of every month through the Google Forms. Areas of improvement are identified and the analysed feedback is discussed in faculty meetings."]
+        },
+        {
+          "tag":"wcud",
+          "patterns":["What can you do?","How will you assist me?","How will you help me?"],
+          "answer":["I can assist you with simple complaints and queries"]
+        },
+        {
+          "tag":"reval",
+          "patterns":["I need to revaluvate my subject marks","How to have my subject mark revaluvated","Revaluvation"],
+          "answer":["To revaluvate your marks, approach the exam department and give the necessary details like subject code for revaluvation. Fee for revaluvation is Rs.500 per subject.A receipt will be given for confirmation. The revaluvated marks will be out within a month"]
+        }
+    ]
+}
+
+
