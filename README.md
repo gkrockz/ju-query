@@ -4,7 +4,7 @@
 
 ---
 > **What's new in the latest release 🐞 ➡️ 🆕:** 
->  <p>1. Unlocked new sections in navbar such as (Following, My Questions, Users, Notifications) </p>
+>  <p>1. Added AI assisted chatbot 🤖</p>
 >  <p>2. Dynamic Image preview while pasting Image URL for each question</p>
 >  <p>3. Updated UI Components and Stylesheets</p>
 ---  
